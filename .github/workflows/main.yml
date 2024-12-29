@@ -31,7 +31,7 @@ jobs:
 
   image_scan:
     name: build image and run image scan
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: checkout code
@@ -39,8 +39,6 @@ jobs:
 
     - name: Set up Docker
       uses: docker-practice/actions-setup-docker@v1
-      with:
-        docker_version: '20.10.7'
 
     - name: build Docker image
       run: docker build -f Dockerfile -t mygoat:latest .
