@@ -38,10 +38,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Docker
-      uses: docker-practice/actions-setup-docker@v1
-      with:
-        docker_daemon_json:
-          false
+      uses: docker/setup-docker-action@v4.1.0
 
     - name: build Docker image
       run: docker build -f Dockerfile -t mygoat:latest .
