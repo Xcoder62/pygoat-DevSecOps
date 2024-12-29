@@ -45,6 +45,7 @@ jobs:
 
     - name: build Docker image
       run: docker build -f Dockerfile -t mygoat:latest .
+      if: always()
 
     - name: Docker Scout Scan
       run: |
@@ -52,6 +53,7 @@ jobs:
         sh install-scout.sh
         docker scout quickview
         docker scout cves
+      if: always()
   
 
       
