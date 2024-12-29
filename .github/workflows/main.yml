@@ -39,6 +39,9 @@ jobs:
 
     - name: Set up Docker
       uses: docker-practice/actions-setup-docker@v1
+      with:
+        docker_daemon_json:
+          false
 
     - name: build Docker image
       run: docker build -f Dockerfile -t mygoat:latest .
